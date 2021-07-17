@@ -120,6 +120,7 @@
 	}
 	footer .has-max-width {
 		position: relative;
+		padding-bottom: 100px;
 	}
 
 	footer h2 {
@@ -145,8 +146,8 @@
 
 	.smieley {
 		position: absolute;
-		right: 0;
-		bottom: -150px;
+		right: -50px;
+		bottom: -120px;
 	}
 	.bg-text {
 		position: absolute;
@@ -154,6 +155,6 @@
 		color: white;
 		opacity: 0.1;
 		font-weight: 600;
-		font-size: 250px;
+		font-size: 230px;
 	}
 </style>
