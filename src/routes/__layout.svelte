@@ -69,6 +69,7 @@
 		padding-top: 10px;
 		border-bottom: 1px solid black;
 		background-color: #fff8;
+		-webkit-backdrop-filter: blur(30px);
 		backdrop-filter: blur(30px);
 		z-index: 1;
 		max-width: 1600;
@@ -100,7 +101,8 @@
 		font-weight: 600;
 	}
 
-	li {
+	li a {
+		display: inline-block;
 		padding: 10px;
 	}
 
