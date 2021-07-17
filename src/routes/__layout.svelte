@@ -106,6 +106,7 @@
 
 	main {
 		flex-grow: 1;
+		padding-bottom: 100px;
 	}
 
 	footer {
