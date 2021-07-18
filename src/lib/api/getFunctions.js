@@ -6,4 +6,8 @@ export const getCreators = () => {
 
 export const getProducts = () => {
 	return get("/products/");
+}
+
+export const getSlug = (slug, filter, headers) => {
+	return get(`/${slug}`, filter, headers);
 };
