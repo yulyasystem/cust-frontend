@@ -20,13 +20,13 @@
 	}
 	.rays {
 		transform: scale(2) translateY(-3%);
-		animation: rays-rotate 10s both infinite;
-		animation-timing-function: steps(7, end);
+		/* animation: rays-rotate 10s both infinite; */
+		/* animation-timing-function: steps(7, end); */
 	}
 
-	@keyframes rays-rotate {
+	/* @keyframes rays-rotate {
 		from {
-			transform: scale(2) translateY(-3%) rotate(500deg);
+			transform: rotate(500deg) scale(2) translateY(-3%);
 		}
-	}
+	} */
 </style>

@@ -94,6 +94,8 @@
 	</div>
 </footer>
 
+<div class="not-adapted">Сайт ще не адаптовано для маленьких экранів</div>
+
 <style>
 	:root {
 		visibility: visible !important;
@@ -114,10 +116,33 @@
 		-webkit-backdrop-filter: blur(30px);
 		backdrop-filter: blur(30px);
 		z-index: 1;
-		max-width: 1600;
+		max-width: 1600px;
 		padding-left: 50px;
 		padding-right: 50px;
 		box-shadow: 0 -40px 0 white;
+	}
+
+	.not-adapted {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 1;
+		background-color: #fffe;
+		backdrop-filter: blur(10px);
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		font-size: 20px;
+		box-sizing: border-box;
+	}
+
+	@media (max-width: 1140px) {
+		.not-adapted {
+			display: flex;
+		}
 	}
 
 	@media (max-width: 1500px) {

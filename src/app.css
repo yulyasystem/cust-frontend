@@ -11,6 +11,10 @@
 	padding-right: 20px;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	overflow-x: hidden;
 	margin: 0;
