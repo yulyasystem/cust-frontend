@@ -1,5 +1,9 @@
 import { get } from "$lib/api/base";
 
-export const getTestData = (filter, headers) => {
-	return get("/test/", filter, headers);
+export const getCreators = () => {
+	return get("/authors/");
+}
+
+export const getProducts = () => {
+	return get("/products/");
 };
