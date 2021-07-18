@@ -9,6 +9,5 @@
     font-weight: 600;
     max-width: 550px;
     font-size: 40px;
-    margin-bottom: 200px;
   }
 </style>
