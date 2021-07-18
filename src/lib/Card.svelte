@@ -65,6 +65,7 @@
 	}
 
 	img {
+		object-fit: cover;
 		aspect-ratio: 1;
 		background-color: white;
 		opacity: 1;
