@@ -40,16 +40,16 @@
 
 	<nav class="right">
 		<ul>
-			<li class:active={$page.path === '/upcycle'}>
-				<a sveltekit:prefetch href="/upcycle">Апсайкл</a>
+			<li class:active={$page.path === '#'}>
+				<a sveltekit:prefetch href="#">Апсайкл</a>
 			</li>
-			<li class:active={$page.path === '/creators'}>
-				<a sveltekit:prefetch href="/creators">Творці</a>
+			<li>
+				<a sveltekit:prefetch href="#creators">Митці</a>
 			</li>
-			<li class:active={$page.path === '/about'}>
-				<a sveltekit:prefetch href="/about">Про нас</a>
+			<li class:active={$page.path === '#'}>
+				<a sveltekit:prefetch href="#">Про нас</a>
 			</li>
-			<li class:active={$page.path === '/cart'}><a sveltekit:prefetch href="/cart">Кошик</a></li>
+			<li class:active={$page.path === '#'}><a sveltekit:prefetch href="#">Кошик</a></li>
 		</ul>
 	</nav>
 </header>

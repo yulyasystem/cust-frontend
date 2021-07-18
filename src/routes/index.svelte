@@ -1,5 +1,5 @@
 <script context="module">
-	import { getTestData } from '$lib/api/getFunctions';
+	import { getProducts, getCreators } from '$lib/api/getFunctions';
 	import stripe from '$lib/stripe.png';
 
 	import Card from '$lib/Card.svelte';
@@ -8,17 +8,23 @@
 	export const prerender = false;
 
 	export async function load() {
-		const response = await getTestData();
-		if (response.error) return { error: response.error };
+		const responseProducts = await getProducts();
+		const responseCreators = await getCreators();
 
-		return { props: { testData: response } };
+		const error = responseProducts.error || responseCreators.error;
+
+		if (error) return { error };
+
+		return { props: { productsData: responseProducts, creatorsData: responseCreators } };
 	}
 </script>
 
 <script>
-	export let testData;
+	export let productsData;
+	export let creatorsData;
 
-	let [firstItem, ...restItems] = JSON.parse(testData);
+	let [firstItem, ...restItems] = JSON.parse(productsData);
+	let creatorsParsed = JSON.parse(creatorsData);
 </script>
 
 <svelte:head>
@@ -29,7 +35,7 @@
 	<div class="left">
 		<h1>Місце унікальних речей</h1>
 		<div class="subinfo">
-			<a href="/upcycle" class="reset-link know-more">Дізнатись більше</a>
+			<a href="#" class="reset-link know-more">Дізнатись більше</a>
 			<p>Платформа для митців кастомного одягу та аксесуарів, з акцентом на апсайкл</p>
 		</div>
 	</div>
@@ -49,6 +55,17 @@
 	<div class="cards">
 		{#each restItems as item}
 			<Card data={item} />
+		{/each}
+	</div>
+</section>
+
+<section class="creators has-max-width" id="creators">
+	<header>
+		<h2>МИТЦІ <img class="stripe" src={stripe} alt="decorative stripe" /></h2>
+	</header>
+	<div class="cards">
+		{#each creatorsParsed as item}
+			<Card data={item} creator />
 		{/each}
 	</div>
 </section>
@@ -119,7 +136,8 @@
 		animation: backwards fade-in 1s 1100ms cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 
-	.products header {
+	.products header,
+	.creators header {
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
@@ -139,6 +157,9 @@
 		width: 170px;
 		transform: translate(50%, -50%);
 		z-index: -1;
+	}
+	.creators header h2 img.stripe {
+		filter: saturate(100%) brightness(80%) hue-rotate(180deg);
 	}
 	.cards {
 		display: flex;

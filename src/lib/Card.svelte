@@ -1,6 +1,7 @@
 <script>
 	export let data;
 	export let shifted;
+	export let creator;
 
 	export function showAfterLoaded(node) {
 		if (node.complete) {
@@ -24,7 +25,7 @@
 <div class="card" class:shifted>
 	<a
 		class="reset-link to-product non-text"
-		href={'/products/' + data.slug}
+		href={creator ? '#' : '/products/' + data.slug}
 		style="background-color: rgb({data.color});"
 	>
 		<img
@@ -35,9 +36,13 @@
 		/>
 	</a>
 	<button class="info">
-		<span class="name">{data.name}</span>
+		<span class="name">{data.name || data.username}</span>
 		<span class="descr">{data.description}</span>
-		<b>Додати до кошику за <span class="price">{data.price}₴</span></b>
+		{#if creator}
+			<b>Подивитись роботи →</b>
+		{:else}
+			<b>Додати до кошику за <span class="price">{data.price}₴</span></b>
+		{/if}
 	</button>
 </div>
 
