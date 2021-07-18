@@ -63,9 +63,10 @@
         border: 1px solid #000;
 	}
 	h3 {
-		font-size: 60px;
+		font-size: 35px;
 		font-weight: 500;
 		margin: 0;
+        margin-bottom: 10px;
 	}
 	p {
 		color: #696871;
